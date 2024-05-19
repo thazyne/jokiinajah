@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Joki Coding Services</title>
+  <!-- Bootstrap CSS -->
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    .service-logo {
+      width: 100px;
+      height: auto;
+      margin: 20px;
+    }
+
+    body.dark-mode {
+      background-color: #121212;
+      color: #ffffff;
+    }
+
+    body.dark-mode .navbar,
+    body.dark-mode .jumbotron,
+    body.dark-mode .bg-light {
+      background-color: #1f1f1f !important;
+    }
+
+    body.dark-mode .nav-link {
+      color: #ffffff !important;
+    }
+
+    body.dark-mode .btn-primary {
+      background-color: #bb86fc;
+      border-color: #bb86fc;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="#">Joki Coding</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+      aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item">
+          <a class="nav-link" href="#services">Services</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#contact">Contact</a>
+        </li>
+        <li class="nav-item">
+          <button id="darkModeToggle" class="btn btn-secondary">Dark Mode</button>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Header -->
+  <header class="jumbotron text-center">
+    <h1 class="display-4">ngoding services</h1>
+    <p class="lead">joki gw ajh</p>
+    <a class="btn btn-primary btn-lg" href="#contact" role="button">Get Started</a>
+  </header>
+
+  <!-- Services Section -->
+  <section id="services" class="container text-center my-5">
+    <h2 class="mb-4">Our Services</h2>
+    <div class="row">
+      <div class="col-md-6">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/c/c3/Python-logo-notext.svg" alt="Python"
+          class="service-logo">
+        <h5>Python</h5>
+        <p>bahasa pemrograman dasar, rekayasa data ready</p>
+      </div>
+      <div class="col-md-6">
+        <img src="https://upload.wikimedia.org/wikipedia/en/3/30/Java_programming_language_logo.svg" alt="Java"
+          class="service-logo">
+        <h5>Java</h5>
+        <p>bisa bikin gui, pake mvc pun jg bisa</p>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-6">
+        <img
+          src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c1/Android_Studio_icon_%282023%29.svg/1024px-Android_Studio_icon_%282023%29.svg.png"
+          alt="Android Studio" class="service-logo">
+        <h5>Android Studio</h5>
+        <p>tugas yg berhub dgn mobile programming</p>
+      </div>
+      <div class="col-md-6">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/1/18/C_Programming_Language.svg" alt="C Algorithm"
+          class="service-logo">
+        <h5>C Algorithms</h5>
+        <p>tugas algo 1 2 3 ready!!!1111</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact" class="container text-center my-5">
+    <h2 class="mb-4">Contact Us</h2>
+    <div class="row justify-content-center">
+      <div class="col-md-8">
+        <div class="card">
+          <div class="card-body">
+            <form id="contactForm">
+              <div class="form-group">
+                <label for="message">Message:</label>
+                <textarea class="form-control" id="message" rows="3" required></textarea>
+              </div>
+              <button type="submit" class="btn btn-primary">Submit</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-light py-4 text-center">
+    <p>&copy; 2024 daniel. All rights reserved.</p>
+  </footer>
+
+  <!-- Bootstrap JS and dependencies -->
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <script>
+    document.getElementById('darkModeToggle').addEventListener('click', function () {
+      document.body.classList.toggle('dark-mode');
+      if (document.body.classList.contains('dark-mode')) {
+        this.textContent = 'Light Mode';
+      } else {
+        this.textContent = 'Dark Mode';
+      }
+    });
+
+    document.getElementById('contactForm').addEventListener('submit', function (e) {
+      e.preventDefault();
+      const message = document.getElementById('message').value;
+      const phoneNumber = "+6281380824165"; // Replace with your phone number
+      const whatsappUrl = `https://api.whatsapp.com/send?phone=${phoneNumber}&text=${encodeURIComponent(message)}`;
+      window.open(whatsappUrl, '_blank');
+    });
+  </script>
+</body>
+
+</html>
